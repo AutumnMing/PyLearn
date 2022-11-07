@@ -31,12 +31,16 @@ brand_list = [
         'categoryId':each_dict['categoryId'],
         'label':each_dict['label'],
         'intro':each_dict['intro'],
-        'permitnumber':each_dict['permitnumber']
+        'permitnumber':each_dict['permitnumber'],
+        'permitDate':each_dict['permitDate'],
+        'sign':each_dict['sign']
     }
     for each_dict in prov_data if each_dict['origin']
 ]
 
 # 导出
 brand_df = pd.DataFrame(brand_list)
+brand_df['permitDate'] = brand_df['permitDate'].str.strip().str[0:4]
+brand_df['origin'] = brand_df['origin'].str.strip()
 brand_df.to_excel('out1.xlsx', index=False)
 
