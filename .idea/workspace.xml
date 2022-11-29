@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35f02f41-888d-4352-82ac-d895dc63575e" name="Changes" comment="Update workspace.xml">
-      <change afterPath="$PROJECT_DIR$/CrawNationalData/national_var.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CrawlerLearb/com_use/craw_area_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +98,7 @@
       <workItem from="1669622138634" duration="2075000" />
       <workItem from="1669624396852" duration="411000" />
       <workItem from="1669702179070" duration="2932000" />
-      <workItem from="1669707982273" duration="5517000" />
+      <workItem from="1669707982273" duration="5897000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1664500582232</created>
@@ -159,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669262702733</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update workspace.xml">
+      <created>1669714153145</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669714153145</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
