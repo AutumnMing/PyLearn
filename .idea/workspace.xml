@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35f02f41-888d-4352-82ac-d895dc63575e" name="Changes" comment="Update workspace.xml">
-      <change afterPath="$PROJECT_DIR$/CrawlerLearb/com_use/bytravel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CrawlerLearb/pycraw3/selenium_base/merge_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PyLearn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyLearn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrawlerLearb/pycraw3/selenium_base/selenium下拉框.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlerLearb/pycraw3/selenium_base/selenium下拉框.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrawlerLearb/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlerLearb/test1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +101,7 @@
       <workItem from="1669707982273" duration="5897000" />
       <workItem from="1669772143239" duration="1025000" />
       <workItem from="1669790582072" duration="7270000" />
-      <workItem from="1669861117929" duration="9289000" />
+      <workItem from="1669861117929" duration="9676000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1664500582232</created>
