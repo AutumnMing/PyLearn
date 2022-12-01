@@ -5,6 +5,7 @@ from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
+from pandas import DataFrame,concat
 
 browser = webdriver.Edge()
 browser.get('http://xzqh.mca.gov.cn/map')
@@ -26,7 +27,7 @@ shengji_list = select_prov.options
 prov_list = [each.text for each in shengji_list[1:]]
 
 # 从省份循环采集
-for prov in prov_list:
+for _, prov in enumerate(prov_list):
     print('='*100)
     select_prov.select_by_value(prov)
     sleep(1.5)
@@ -36,7 +37,8 @@ for prov in prov_list:
     city_list = [each.text for each in diji_list[1:]]
 
     # 获取每个省份每个地级市的区县列表
-    for city in city_list:
+    for _, city in enumerate(city_list):
+        city_data = []
         select_city.select_by_value(city)
         sleep(1.5)
         xianji_list = select_district.options
@@ -45,7 +47,18 @@ for prov in prov_list:
             {'prov': prov, 'city': city, 'district': each.text}
             for each in xianji_list[1:]
         ]
-
+        # 省辖地级市处理, 该类型地区无 district
+        if not district_list:
+            district_list = [
+                {'prov': prov, 'city': city, 'district': city}
+            ]
+        # 转换为数据框
+        df = DataFrame(district_list)
+        city_data.append(df)
+        # 导出数据
+        filename = './data/' + prov[0:2] + city + '.csv'
+        concat(city_data).to_csv(filename, index=False, encoding='utf-8')
+        sleep(0.5)
     print('='*100)
     sleep(0.5)
 
