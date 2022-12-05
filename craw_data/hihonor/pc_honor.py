@@ -13,20 +13,15 @@ def append_csv(dft, filename, encoding='utf-8'):
     dft.to_csv(filename, mode='a', encoding=encoding, header=False, index=False)
 
 
-# 注意返回的形式 --
-def read_url(filename, header: int | None, url_name='space_url'):
-    # return deque(read_csv(filename, header=header).to_dict('records'))
-    return deque(read_csv(filename, header=header)[url_name].tolist())
+# 分块读取, 返回由 多个list 组成的列表
+def read_url(filename, header: int | None, url_name='space_url', chunksize: int | None = None):
+    if chunksize is None:
+        return deque(read_csv(filename, header=header)[url_name].tolist())
+    if chunksize:
+        data = read_csv(filename, header=header, chunksize=chunksize)
+        return [each.loc[:, url_name].tolist() for each in data]
 
 
-# 板块url
-# https://club.hihonor.com/cn/forum-3965-1.html
-# 板块帖子
-# https://club.hihonor.com/cn/forum-3965-1.html?filter=dateline
-# https://club.hihonor.com/cn/forum-3965-4.html?filter=dateline
-
-
-# 3965:荣耀magic -- 构造版块url
 def get_base_url(max_page: int, page_type: str | None):
     for page_num in arange(max_page, 0, -1):
         yield f'https://club.hihonor.com/cn/forum-{page_type}-{page_num}.html?filter=dateline'
@@ -37,8 +32,6 @@ def scrape_model_page(model_url, headers):
     try:
         r = requests.get(model_url, headers=headers)
         if r.status_code == 200:
-            print('='*100)
-            print(f'采集成功, url为: {model_url}')
             return r.text
     except requests.RequestException as e1:
         print(f'报错{e1}, 此刻的url为: {model_url}')
@@ -79,7 +72,7 @@ def get_space_urls(max_page, page_type, headers, filename):
 
 # 抓取用户的空间详细信息
 def scrape_space(space_url, headers):
-    sleep(rand()*0.1)
+    sleep(rand() * 0.1)
     return scrape_model_page(space_url, headers)
 
 
@@ -111,23 +104,29 @@ def parse_space_info(text):
     }]
 
 
-# 功能整合 -- 获取用户详细信息 --
-def get_user_info(space_url_deque, headers, output_filename, encoding='utf-8'):
+# 功能整合 -- 获取用户详细信息 -- 单次获取 --
+def get_user_info(space_url, headers):
+    text = scrape_space(space_url, headers=headers)
+    data = parse_space_info(text)
+    dft = DataFrame(data)
+    dft['dt'] = strftime('%Y-%m-%d', localtime(time()))
+    print(data)
+    return dft
+
+
+# 功能整合 -- 获取用户详细信息 -- 全部页获取与存储
+def get_user_infos(space_url_deque, headers, output_filename, encoding='utf-8'):
     for i in arange(len(space_url_deque)):
         space_url = space_url_deque.pop()
-        sleep(0.01*rand())
-        text = scrape_space(space_url, headers=headers)
-        data = parse_space_info(text)
-        print(f'第{i}条数据为: ')
-        print(data)
-        print('-'*100)
-        dft = DataFrame(data)
-        dft['dt'] = strftime('%Y-%m-%d', localtime(time()))
+        sleep(0.01 * rand())
+        print(f'第{i}条记录: ')
+        print('url: ', space_url)
+        dft = get_user_info(space_url, headers)
+        print('=' * 100)
         append_csv(dft, filename=output_filename, encoding=encoding)
 
 
-# 构造--精华帖子 digest -- 热门帖子 -- heat -- url
-# https://club.hihonor.com/cn/forum-3965-106.html?filter=digest
+# 构造-- 精华帖子 digest -- 热门帖子 -- heat -- url
 def get_digest_url(max_page: int, page_type: str):
     # digest or heat
     for page_num in arange(max_page, 0, -1):
@@ -147,10 +146,3 @@ def get_hot_urls(max_page, page_type, headers, filename):
         except StopIteration:
             print('采集完成')
             break  # 终止循环, 避免死循环
-
-
-# 空间url, 直接获取
-# https://club.hihonor.com/cn/space-uid-212252902.html
-# def get_space_url(uid):
-#     return f'https://club.hihonor.com/cn/space-uid-{uid}.html'
-
