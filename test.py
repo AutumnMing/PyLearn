@@ -1,5 +1,5 @@
 import os
-import PySide6.QtCore
+
 
 os.getcwd()
 # 测试文件
