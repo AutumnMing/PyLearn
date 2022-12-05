@@ -43,12 +43,14 @@ def clear_uid(crawed_uid, base_file='space_urls_base.txt', encoding='utf-8', ind
     return deque(url_list)
 
 
-def transform_excel(csv_name, excel_name, col_names, encoding='utf-8'):
+def transform_excel(csv_name, excel_name, col_names, encoding='utf-8', uid_col=('uid',0)):
     if 'data' not in csv_name:
         csv_name = './data/' + csv_name
         if 'data' not in excel_name:
             excel_name = './data/' + excel_name
-    dft = read_csv(csv_name, encoding=encoding, header=None).dropna().drop_duplicates()
+    uid_name, uid_index = uid_col # 解包元组获取uid的名称, 所在列
+    # dtype参数定义uid为字符串
+    dft = read_csv(csv_name, encoding=encoding, header=None, dtype={uid_index:str}).dropna().drop_duplicates()
     dft = DataFrame(data=dft.values, columns=col_names)
     # 顺带对csv文件进行去重 -- 去除空行 -- 添加表头
     dft.to_csv(csv_name, encoding=encoding, index=False, header=True)
@@ -59,13 +61,15 @@ def transform_excel(csv_name, excel_name, col_names, encoding='utf-8'):
 # 测试代码,输出的测试文件可以删除
 if __name__ == '__main__':
 
-    columns = [
-        'uid', 'user_name', 'user_lv', 'province', 'active_value', 'post_num', 'replies',
-        'friends', 'total_sign', 'continue_sign', 'month_sign', 'last_sign', 'agg_score',
-        'last_score', 'sign_lv', 'medal_num', 'date'
-    ]
-    transform_excel('user_info.csv', 'user_info.xlsx', col_names=columns)
+    # columns = [
+    #     'uid', 'user_name', 'user_lv', 'province', 'active_value', 'post_num', 'replies',
+    #     'friends', 'total_sign', 'continue_sign', 'month_sign', 'last_sign', 'agg_score',
+    #     'last_score', 'sign_lv', 'medal_num', 'date'
+    # ]
+    # transform_excel('user_info.csv', 'user_info.xlsx', col_names=columns)
 
-    # 测试 clear_uid
-    # clear_uid('user_info.csv')
+    # 测试 transform_excel
+    columns=['uid','name']
+    transform_excel('test.csv', 'test.xlsx', col_names=columns)
+
 
