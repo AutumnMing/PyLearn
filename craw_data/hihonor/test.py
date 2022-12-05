@@ -23,5 +23,20 @@ from requests import get
 # d1 = strftime('%Y-%m-%d', localtime(time()))
 # print(d1)
 
-for i, each in enumerate(['a', 'b'], start=1):
-    print(i, each)
+# for i, each in enumerate(['a', 'b'], start=1):
+#     print(i, each)
+
+from multiprocessing import Process
+
+
+def f(name):
+    print('hello', name)
+
+
+if __name__ == '__main__':
+    for i in range(5):
+        print('=' * 100)
+        print('i')
+        p = Process(target=f, args=('bob',))
+        p.start()
+        p.join()
