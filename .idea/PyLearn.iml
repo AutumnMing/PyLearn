@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/CrawNationalData/data" />
       <excludeFolder url="file://$MODULE_DIR$/CrawlerLearb/pycraw3/selenium_base/data" />
       <excludeFolder url="file://$MODULE_DIR$/craw_data/hihonor/data" />
+      <excludeFolder url="file://$MODULE_DIR$/crawler_learn/pycraw3/selenium_base/data" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

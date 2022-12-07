@@ -2,26 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35f02f41-888d-4352-82ac-d895dc63575e" name="Changes" comment="Update workspace.xml">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/craw_data/hihonor/data/space_urls_active.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/craw_data/hihonor/data/space_urls_sleep.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/craw_data/hihonor/data/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/craw_data/hihonor/data/test.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/craw_data/hihonor/data/user_info1.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/craw_data/hihonor/space_url_clean.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/craw_data/com_use/bytravel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/craw_data/com_use/bytravel_test.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/craw_data/com_use/craw_area_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/craw_data/com_use/merge_file.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/craw_data/com_use/nong_brand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/craw_data/com_use/nong_com.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_learn/requests_base/craw_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_learn/selenium_base/data/district.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_learn/selenium_base/merge_csv.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_learn/selenium_base/selenium下拉框.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_learn/selenium_base/下拉框测试.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crawler_learn/文件夹内容说明.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PyLearn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PyLearn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/craw_data/hihonor/clean_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/craw_data/hihonor/clean_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/D1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/D2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/D3.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/D4.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/D5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/Ddigest.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/Dheat.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/space_urls_base.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/test.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/craw_data/hihonor/data/test.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/user_info.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/user_info.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/user_info1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/user_info2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/data/备注.txt" beforeDir="false" afterPath="$PROJECT_DIR$/craw_data/hihonor/data/备注.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/pc_honor.py" beforeDir="false" afterPath="$PROJECT_DIR$/craw_data/hihonor/pc_honor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/craw_data/hihonor/pc_user_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/craw_data/hihonor/pc_user_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/com_use/bytravel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/com_use/craw_area_info.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/com_use/merge_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/com_use/nong_brand.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/com_use/nong_com.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/pycraw3/requests_base/craw_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/pycraw3/selenium_base/data/district.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/pycraw3/selenium_base/merge_csv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/pycraw3/selenium_base/selenium下拉框.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/pycraw3/selenium_base/下拉框测试.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawler_learn/pycraw3/文件夹内容说明.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +93,26 @@
       <recent name="F:\Github\PyLearn\CrawNationalData" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.pc_honor">
+    <configuration name="bytravel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyLearn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/craw_data/com_use" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/craw_data/com_use/bytravel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="clean_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyLearn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,8 +135,56 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pc_honor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyLearn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/craw_data/hihonor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/craw_data/hihonor/pc_honor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pc_user_info" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PyLearn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/craw_data/hihonor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/craw_data/hihonor/pc_user_info.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pc_honor" />
+        <item itemvalue="Python.bytravel" />
+        <item itemvalue="Python.bytravel" />
+        <item itemvalue="Python.pc_user_info" />
         <item itemvalue="Python.clean_data" />
       </list>
     </recent_temporary>
@@ -151,6 +234,7 @@
       <workItem from="1669790582072" duration="7270000" />
       <workItem from="1669861117929" duration="9676000" />
       <workItem from="1670201378853" duration="5163000" />
+      <workItem from="1670374402239" duration="17969000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1664500582232</created>
@@ -239,17 +323,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PyLearn$bytravel.coverage" NAME="bytravel Coverage Results" MODIFIED="1669861709475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb/com_use" />
-    <SUITE FILE_PATH="coverage/PyLearn$test.coverage" NAME="test Coverage Results" MODIFIED="1664358572045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyLearn$bytravel.coverage" NAME="bytravel Coverage Results" MODIFIED="1670310446598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crawler_learn/com_use" />
     <SUITE FILE_PATH="coverage/PyLearn$craw_area_info.coverage" NAME="craw_area_info Coverage Results" MODIFIED="1669624406221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb/com_use" />
     <SUITE FILE_PATH="coverage/PyLearn$Crawtest.coverage" NAME="Crawtest Coverage Results" MODIFIED="1667785528313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
+    <SUITE FILE_PATH="coverage/PyLearn$main_space_pc.coverage" NAME="main_space_pc Coverage Results" MODIFIED="1670231801065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
     <SUITE FILE_PATH="coverage/PyLearn$selenium.coverage" NAME="selenium下拉框 Coverage Results" MODIFIED="1669884314733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb/pycraw3/selenium_base" />
-    <SUITE FILE_PATH="coverage/PyLearn$craw_nong.coverage" NAME="craw_nong Coverage Results" MODIFIED="1667789112716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
     <SUITE FILE_PATH="coverage/PyLearn$nong_com.coverage" NAME="nong_com Coverage Results" MODIFIED="1667801300112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
-    <SUITE FILE_PATH="coverage/PyLearn$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1669881865427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
     <SUITE FILE_PATH="coverage/PyLearn$merge_file.coverage" NAME="merge_file Coverage Results" MODIFIED="1667804090376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
-    <SUITE FILE_PATH="coverage/PyLearn$merge_csv.coverage" NAME="merge_csv Coverage Results" MODIFIED="1669886018048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb/pycraw3/selenium_base" />
-    <SUITE FILE_PATH="coverage/PyLearn$clean_data.coverage" NAME="clean_data Coverage Results" MODIFIED="1670204124465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
+    <SUITE FILE_PATH="coverage/PyLearn$pc_honor.coverage" NAME="pc_honor Coverage Results" MODIFIED="1670394495953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
     <SUITE FILE_PATH="coverage/PyLearn$nong_prov.coverage" NAME="nong_prov Coverage Results" MODIFIED="1667797525905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
+    <SUITE FILE_PATH="coverage/PyLearn$pc_user_info.coverage" NAME="pc_user_info Coverage Results" MODIFIED="1670376199837" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
+    <SUITE FILE_PATH="coverage/PyLearn$test.coverage" NAME="test Coverage Results" MODIFIED="1670229812923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
+    <SUITE FILE_PATH="coverage/PyLearn$craw_nong.coverage" NAME="craw_nong Coverage Results" MODIFIED="1667789112716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
+    <SUITE FILE_PATH="coverage/PyLearn$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1669881865427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
+    <SUITE FILE_PATH="coverage/PyLearn$merge_csv.coverage" NAME="merge_csv Coverage Results" MODIFIED="1669886018048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb/pycraw3/selenium_base" />
+    <SUITE FILE_PATH="coverage/PyLearn$clean_data.coverage" NAME="clean_data Coverage Results" MODIFIED="1670374893223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
   </component>
 </project>
