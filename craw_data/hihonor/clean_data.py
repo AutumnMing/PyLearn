@@ -30,6 +30,7 @@ def clear_uid(crawed_uid, base_file='space_urls_base.txt', encoding='utf-8', ind
     base_file = './data/' + base_file
     crawed_uid = './data/' + crawed_uid
     # header = 0表示取第一行作为字段名称, base_file表内有列名称, 报错请注意检查
+
     dft_base = read_csv(base_file, header=0, encoding=encoding, dtype={index_name: 'str'})
     print(dft_base)
     # 注意查看 use_info_crawed 有没有表头、默认第一列是 uid -- 这里的写法是认为有
@@ -49,12 +50,13 @@ def transform_excel(csv_name, excel_name, col_names, encoding='utf-8', uid_col=(
         if 'data' not in excel_name:
             excel_name = './data/' + excel_name
     uid_name, uid_index = uid_col # 解包元组获取uid的名称, 所在列
-    # dtype参数定义uid为字符串
-    dft = read_csv(csv_name, encoding=encoding, header=None, dtype={uid_index:str}).dropna().drop_duplicates()
+    # dtype参数定义uid为字符串 # # low_memory 参数
+    dft = read_csv(csv_name, encoding=encoding, header=0, dtype={uid_index:str}, low_memory=False).dropna().drop_duplicates()
     dft = DataFrame(data=dft.values, columns=col_names)
     # 顺带对csv文件进行去重 -- 去除空行 -- 添加表头
-    dft.to_csv(csv_name, encoding=encoding, index=False, header=True)
+    # dft.to_csv(csv_name, encoding=encoding, index=False, header=True)
     dft.to_excel(excel_name, index=False)
+    # remove(csv_name)
     print('csv已经转换成xlsx')
 
 

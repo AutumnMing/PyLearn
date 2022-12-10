@@ -35,7 +35,7 @@ if __name__ == '__main__':
     # -- 获得基础的space_urls_base -- 采集用的列表 -- space_urls
     # clean_space_urls()
 
-    space_url_deque = read_url('./data/space_urls.csv', header=0)
+    space_url_deque = read_url('./data/space_urls_active.csv', header=0)
     # 对已经存在的user_info.csv内的uid，进行清洗, 生成新的space_urls
     # if 'user_info.csv' in listdir('./data'):
     #     space_url_deque = clear_uid('user_info.csv')

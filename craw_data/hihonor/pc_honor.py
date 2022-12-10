@@ -1,5 +1,4 @@
-from time import sleep
-from time import strftime, localtime, time
+from time import strftime, localtime, time, sleep
 from collections import deque
 import requests
 from parsel import Selector
@@ -116,7 +115,7 @@ def get_user_info(space_url, headers):
 
 # 功能整合 -- 获取用户详细信息 -- 全部页获取与存储
 def get_user_infos(space_url_deque, headers, output_filename, encoding='utf-8'):
-    for i in arange(len(space_url_deque)):
+    for i in arange(1, len(space_url_deque)+1):
         space_url = space_url_deque.pop()
         sleep(0.01 * rand())
         print(f'第{i}条记录: ')
@@ -146,3 +145,9 @@ def get_hot_urls(max_page, page_type, headers, filename):
         except StopIteration:
             print('采集完成')
             break  # 终止循环, 避免死循环
+
+
+if __name__ == '__main__':
+    data = [{'uid': '8282385', 'user_lv': '用户组 : LV10', 'province': '广西', 'active_value': '36074'}]
+    dft = DataFrame(data)
+    append_csv(dft, 'test.csv')
