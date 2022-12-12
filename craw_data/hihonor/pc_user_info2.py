@@ -31,22 +31,23 @@ if __name__ == '__main__':
         'User-Agent': '''Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \
         (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.62'''
     }
+    print(header)
     # step4 -- space_urls_active 是已经清洗完成的活跃用户
-    space_urls_data = read_url('./data/space_urls_active.csv', header=0, chunksize=30)
-    out_name, encoding = './data/user_info.csv', 'utf-8'
-    # 开启4个进程
-    with Pool(4) as p:
-        for space_urls_lists in space_urls_data:
-            get_info_obj = GetUsersInfo(space_urls_lists, header, out_name, encoding)
-            get_info_obj.start()
-            get_info_obj.join()
-            get_info_obj.close()
-
-    # 转换文件格式, 添加表头
-    columns = [
-        'uid', 'user_name', 'user_lv', 'province', 'active_value', 'post_num', 'replies',
-        'friends', 'total_sign', 'continue_sign', 'month_sign', 'last_sign', 'agg_score',
-        'last_score', 'sign_lv', 'medal_num', 'date'
-    ]
-    out_name = 'user_info' + strftime('%Y%m%d%H', localtime(time())) + '.xlsx'
-    transform_excel('user_info.csv', out_name, col_names=columns)
+    # space_urls_data = read_url('./data/space_urls_active.csv', header=0, chunksize=30)
+    # out_name, encoding = './data/user_info.csv', 'utf-8'
+    # # 开启4个进程
+    # with Pool(4) as p:
+    #     for space_urls_lists in space_urls_data:
+    #         get_info_obj = GetUsersInfo(space_urls_lists, header, out_name, encoding)
+    #         get_info_obj.start()
+    #         get_info_obj.join()
+    #         get_info_obj.close()
+    #
+    # # 转换文件格式, 添加表头
+    # columns = [
+    #     'uid', 'user_name', 'user_lv', 'province', 'active_value', 'post_num', 'replies',
+    #     'friends', 'total_sign', 'continue_sign', 'month_sign', 'last_sign', 'agg_score',
+    #     'last_score', 'sign_lv', 'medal_num', 'date'
+    # ]
+    # out_name = 'user_info' + strftime('%Y%m%d%H', localtime(time())) + '.xlsx'
+    # transform_excel('user_info.csv', out_name, col_names=columns)
