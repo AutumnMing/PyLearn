@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35f02f41-888d-4352-82ac-d895dc63575e" name="Changes" comment="Update workspace.xml" />
+    <list default="true" id="35f02f41-888d-4352-82ac-d895dc63575e" name="Changes" comment="Update workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +17,14 @@
         <option value="Python Script" />
         <option value="Jupyter Notebook" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="branch_1" />
+    <option name="OPTIONS">
+      <set>
+        <option value="NO_COMMIT" />
+      </set>
     </option>
   </component>
   <component name="Git.Settings">
@@ -56,7 +68,7 @@
       <recent name="F:\Github\PyLearn\CrawNationalData" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pc_user_info">
+  <component name="RunManager" selected="Python.bytravel">
     <configuration name="bytravel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PyLearn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,9 +159,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bytravel" />
         <item itemvalue="Python.pc_user_info" />
         <item itemvalue="Python.pc_honor" />
-        <item itemvalue="Python.bytravel" />
         <item itemvalue="Python.bytravel" />
         <item itemvalue="Python.clean_data" />
       </list>
@@ -275,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670405566445</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update workspace.xml">
+      <created>1670923990823</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670923990823</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +318,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PyLearn$bytravel.coverage" NAME="bytravel Coverage Results" MODIFIED="1670837008244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/com_use" />
+    <SUITE FILE_PATH="coverage/PyLearn$bytravel.coverage" NAME="bytravel Coverage Results" MODIFIED="1670923914527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/com_use" />
     <SUITE FILE_PATH="coverage/PyLearn$craw_area_info.coverage" NAME="craw_area_info Coverage Results" MODIFIED="1669624406221" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb/com_use" />
     <SUITE FILE_PATH="coverage/PyLearn$Crawtest.coverage" NAME="Crawtest Coverage Results" MODIFIED="1667785528313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
     <SUITE FILE_PATH="coverage/PyLearn$main_space_pc.coverage" NAME="main_space_pc Coverage Results" MODIFIED="1670231801065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
@@ -308,7 +327,7 @@
     <SUITE FILE_PATH="coverage/PyLearn$merge_file.coverage" NAME="merge_file Coverage Results" MODIFIED="1667804090376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
     <SUITE FILE_PATH="coverage/PyLearn$pc_honor.coverage" NAME="pc_honor Coverage Results" MODIFIED="1670394495953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
     <SUITE FILE_PATH="coverage/PyLearn$nong_prov.coverage" NAME="nong_prov Coverage Results" MODIFIED="1667797525905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
-    <SUITE FILE_PATH="coverage/PyLearn$pc_user_info.coverage" NAME="pc_user_info Coverage Results" MODIFIED="1670806571250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
+    <SUITE FILE_PATH="coverage/PyLearn$pc_user_info.coverage" NAME="pc_user_info Coverage Results" MODIFIED="1670894580038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
     <SUITE FILE_PATH="coverage/PyLearn$test.coverage" NAME="test Coverage Results" MODIFIED="1670229812923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/craw_data/hihonor" />
     <SUITE FILE_PATH="coverage/PyLearn$craw_nong.coverage" NAME="craw_nong Coverage Results" MODIFIED="1667789112716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
     <SUITE FILE_PATH="coverage/PyLearn$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1669881865427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CrawlerLearb" />
