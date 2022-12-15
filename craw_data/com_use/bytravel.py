@@ -207,26 +207,26 @@ def check_file(filename, filepath=None):
 
 if __name__ == '__main__':
 
-    # # step1: -- 采集所有地区的url信息, 精确到区县
-    # check_file('district.csv', filepath='./data')
+    # step1: -- 采集所有地区的url信息, 精确到区县
+    check_file('district.csv', filepath='./data')
 
-    # url = 'http://shop.bytravel.cn'
-    # col_names = ['province', 'city', 'district', 'href']
-    # get_all_district(url, 'district.csv', col_names, mode='a+', filepath='./data')
+    url = 'http://shop.bytravel.cn'
+    col_names = ['province', 'city', 'district', 'href']
+    get_all_district(url, 'district.csv', col_names, mode='a+', filepath='./data')
 
-    # # step2: -- 清洗url
-    # col_names = ['province', 'city', 'district', 'href']
-    # df = clean_district_url('district.csv', col_names, url_type='phone', filepath='./data', export_csv=False)
+    # step2: -- 清洗url
+    col_names = ['province', 'city', 'district', 'href']
+    df = clean_district_url('district.csv', col_names, url_type='phone', filepath='./data', export_csv=False)
 
     # step3: -- 采集特产数据
-    # check_file('ct_specialty.csv', filepath='./data')
-    # df = read_csv('./data/clean_district.csv')
-    # col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
-    # for each_district_info in df.to_dict('records'):
-    #     district_specialty(each_district_info, 'ct_specialty.csv', fieldnames=col_names, mode='a+', filepath='./data')
+    check_file('ct_specialty.csv', filepath='./data')
+    df = read_csv('./data/clean_district.csv')
+    col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
+    for each_district_info in df.to_dict('records'):
+        district_specialty(each_district_info, 'ct_specialty.csv', fieldnames=col_names, mode='a+', filepath='./data')
 
     # step4: -- 清洗特产数据 --
-    # col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
-    # df = clean_district_specialty('ct_specialty.csv', col_names, filepath='./data', export_xlsx=True)
-    # print(df.loc[:,col_names[0:5]].head())
+    col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
+    df = clean_district_specialty('ct_specialty.csv', col_names, filepath='./data', export_xlsx=True)
+    print(df.loc[:,col_names[0:5]].head())
     pass
