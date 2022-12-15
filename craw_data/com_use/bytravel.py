@@ -107,7 +107,7 @@ def parse_district(city_info, query_str, encoding='gb2312'):
 def to_csv(data, filename, fieldnames, mode, encoding='utf-8', filepath=None):
     if filepath:
         filename = PurePath(Path(filepath), Path(filename))
-    print(data)
+    # print(data)
     with open(filename, mode=mode, encoding=encoding, newline='') as f:
         writer = DictWriter(f, fieldnames)
         writer.writerow(data)
@@ -156,24 +156,43 @@ def district_specialty(district_info, filename, fieldnames, mode, filepath=None)
     text = crawl_url(url)
     items = parse_items(text, query_str='//ul[@id="titlename"]')
     sleep(0.1 + 0.1 * rand())
-    for item in items:
+    print('==' * 70)
+    print('采集区域', '-', 'province', district_info.get('province'), '-', 'city', district_info.get('city'), sep=' ')
+    print('=+' * 70)
+    for index, item in enumerate(items, start=1):
         specialty_name = item.xpath('./li/a/text()').get()  # 特产名称
         img = item.xpath('./li/a/img/@src').get()  # 是否地标
+        # 特产详情页
+        specialty_url = item.xpath('./li/a/@href').get()
         landmark = 0
         if isinstance(img, str):
             landmark = 1
         district_info['landmark'] = landmark
         district_info['specialty_name'] = specialty_name
+        district_info['specialty_url'] = 'http://m.bytravel.cn' + specialty_url
         to_csv(district_info, filename, fieldnames, mode=mode, filepath=filepath)
+        print(index, district_info, sep=' : ')
         sleep(0.1 + 0.1 * rand())
+    print('==' * 70)
+    print('\n')
 
+    # df = read_csv('./data/ct_specialty.csv', header=None)
+    # col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
+    # df.columns = col_names
+    # df['specialty_name'] = df['specialty_name'].str.replace(' ', '')
+    # df.to_excel('./data/ct_specialty.xlsx', index=False)
+    # print(df.loc[0:5,col_names[0:5]])
 
-def clean_district_specialty(filename, columns, filepath=None, export_csv=False):
+def clean_district_specialty(filename, columns, filepath=None, export_csv=False, export_xlsx=False):
     clean_file_name = 'clean_' + filename
     dft = clean_district(filename, columns, filepath)
+    dft['specialty_name'] = dft['specialty_name'].str.replace(' ', '')
     if export_csv:
         clean_file_name = PurePath(Path(filepath, Path(clean_file_name)))
         dft.to_csv(clean_file_name, encoding='utf-8', index=False)
+    if export_xlsx:
+        clean_file_name = PurePath(Path(filepath, Path(clean_file_name.replace('csv', 'xlsx'))))
+        dft.to_excel(clean_file_name, index=False)
     return dft
 
 
@@ -189,8 +208,8 @@ def check_file(filename, filepath=None):
 if __name__ == '__main__':
 
     # # step1: -- 采集所有地区的url信息, 精确到区县
-    # if exists('./data/district.csv'):
-    #     remove('./data/district.csv')
+    # check_file('district.csv', filepath='./data')
+
     # url = 'http://shop.bytravel.cn'
     # col_names = ['province', 'city', 'district', 'href']
     # get_all_district(url, 'district.csv', col_names, mode='a+', filepath='./data')
@@ -200,10 +219,14 @@ if __name__ == '__main__':
     # df = clean_district_url('district.csv', col_names, url_type='phone', filepath='./data', export_csv=False)
 
     # step3: -- 采集特产数据
+    # check_file('ct_specialty.csv', filepath='./data')
     # df = read_csv('./data/clean_district.csv')
-    # col_names = ['province', 'city', 'district', 'landmark', 'specialty_name']
+    # col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
     # for each_district_info in df.to_dict('records'):
     #     district_specialty(each_district_info, 'ct_specialty.csv', fieldnames=col_names, mode='a+', filepath='./data')
 
-    # step4: -- 采集特产数据
-    check_file('ct_specialty.csv', filepath='./data')
+    # step4: -- 清洗特产数据 --
+    # col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
+    # df = clean_district_specialty('ct_specialty.csv', col_names, filepath='./data', export_xlsx=True)
+    # print(df.loc[:,col_names[0:5]].head())
+    pass

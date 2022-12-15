@@ -17,13 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\craw_data\com_use\province.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\craw_data\hihonor\data\space_urls.csv">
           <value>
             <Attribute>
