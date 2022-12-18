@@ -1,6 +1,6 @@
 from time import sleep
 from os.path import exists
-from os import remove
+from os import remove, makedirs
 from csv import DictWriter
 from pathlib import PurePath, Path
 from parsel import Selector
@@ -107,7 +107,7 @@ def parse_district(city_info, query_str, encoding='gb2312'):
 def to_csv(data, filename, fieldnames, mode, encoding='utf-8', filepath=None):
     if filepath:
         filename = PurePath(Path(filepath), Path(filename))
-    # print(data)
+    print(data)
     with open(filename, mode=mode, encoding=encoding, newline='') as f:
         writer = DictWriter(f, fieldnames)
         writer.writerow(data)
@@ -152,8 +152,8 @@ def clean_district_url(filename, columns, url_type='phone', filepath=None, expor
 
 
 def district_specialty(district_info, filename, fieldnames, mode, filepath=None):
-    url = district_info.pop('href')
-    text = crawl_url(url)
+    district_url = district_info.pop('href')
+    text = crawl_url(district_url)
     items = parse_items(text, query_str='//ul[@id="titlename"]')
     sleep(0.1 + 0.1 * rand())
     print('==' * 70)
@@ -176,12 +176,6 @@ def district_specialty(district_info, filename, fieldnames, mode, filepath=None)
     print('==' * 70)
     print('\n')
 
-    # df = read_csv('./data/ct_specialty.csv', header=None)
-    # col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
-    # df.columns = col_names
-    # df['specialty_name'] = df['specialty_name'].str.replace(' ', '')
-    # df.to_excel('./data/ct_specialty.xlsx', index=False)
-    # print(df.loc[0:5,col_names[0:5]])
 
 def clean_district_specialty(filename, columns, filepath=None, export_csv=False, export_xlsx=False):
     clean_file_name = 'clean_' + filename
@@ -196,10 +190,11 @@ def clean_district_specialty(filename, columns, filepath=None, export_csv=False,
     return dft
 
 
-def check_file(filename, filepath=None):
-    if filepath:
-        print(f'文件存储路径为: {filepath}')
-        filename = PurePath(Path(filepath), Path(filename))
+def check_file(filename, filepath):
+    print(f'文件存储路径为: {filepath}')
+    if not exists(filepath):
+        makedirs(filepath)
+    filename = PurePath(Path(filepath), Path(filename))
     if exists(filename):
         print(f'目标文件已存在: {filename.parts[-1]}')
         remove(filename)
@@ -212,7 +207,7 @@ if __name__ == '__main__':
 
     url = 'http://shop.bytravel.cn'
     col_names = ['province', 'city', 'district', 'href']
-    get_all_district(url, 'district.csv', col_names, mode='a+', filepath='./data')
+    get_all_district(url, 'district.csv', col_names, mode='a', filepath='./data')
 
     # step2: -- 清洗url
     col_names = ['province', 'city', 'district', 'href']
@@ -220,13 +215,12 @@ if __name__ == '__main__':
 
     # step3: -- 采集特产数据
     check_file('ct_specialty.csv', filepath='./data')
-    df = read_csv('./data/clean_district.csv')
+    clean_district = read_csv('./data/clean_district.csv')
     col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
-    for each_district_info in df.to_dict('records'):
+    for each_district_info in clean_district.to_dict('records'):
         district_specialty(each_district_info, 'ct_specialty.csv', fieldnames=col_names, mode='a+', filepath='./data')
 
     # step4: -- 清洗特产数据 --
     col_names = ['province', 'city', 'district', 'landmark', 'specialty_name', 'specialty_url']
-    df = clean_district_specialty('ct_specialty.csv', col_names, filepath='./data', export_xlsx=True)
-    print(df.loc[:,col_names[0:5]].head())
-    pass
+    ct_specialty = clean_district_specialty('ct_specialty.csv', col_names, filepath='./data', export_xlsx=True)
+    print(ct_specialty.loc[:, col_names[0:5]].head())

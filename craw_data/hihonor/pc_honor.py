@@ -148,6 +148,6 @@ def get_hot_urls(max_page, page_type, headers, filename):
 
 
 if __name__ == '__main__':
-    data = [{'uid': '8282385', 'user_lv': '用户组 : LV10', 'province': '广西', 'active_value': '36074'}]
-    dft = DataFrame(data)
-    append_csv(dft, 'test.csv')
+    datas = [{'uid': '8282385', 'user_lv': '用户组 : LV10', 'province': '广西', 'active_value': '36074'}]
+    dt = DataFrame(datas)
+    append_csv(dt, 'test.csv')
