@@ -1,4 +1,4 @@
-/craw_data/hihonor/data
+
 /crawler_learn/pycraw3/selenium_base/data
 /craw_data/com_use/data
 /craw_data/national_data/data
@@ -13,3 +13,4 @@ craw_data/hihonor/__pycache__/pc_honor.cpython-310.pyc
 craw_data/hihonor/data/space_urls.csv
 craw_data/hihonor/data/space_urls_sleep.csv
 craw_data/hihonor/__pycache__/pc_user_info.cpython-310.pyc
+craw_data/hihonor/__pycache__/space_urls_active.csv
