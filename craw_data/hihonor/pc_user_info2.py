@@ -5,7 +5,7 @@ from os.path import exists
 from pathlib import PurePath
 from pc_honor import scrape_space, parse_space_info
 from csv import DictWriter, writer
-from pandas import read_csv
+from pandas import read_csv, concat
 from numpy import arange
 from tqdm import tqdm
 
@@ -24,7 +24,7 @@ def creat_file(filename, filepath, columns):
     :param filename:
     :param filepath:
     :param columns:
-    :return:
+    :return:返回最后一次迭代的文件数字编号
     """
     chdir(filepath)
     if not exists(filename):
@@ -49,10 +49,6 @@ def check_file(filename, filepath, remove_file=False):
     if exists(filename) and remove_file:
         print(f'{filename}文件已存在, 删除')
         remove(filename)
-    if exists(filename) and not remove_file:
-        print(f'{filename}文件已存在, 保留')
-    if not exists(filename):
-        print(f'{filename}文件不存在')
     chdir(pure_path.parent)
 
 
@@ -60,10 +56,13 @@ def split_file(filename, chunksize, filepath, prefix='url_'):
     chdir(filepath)  # 切换到文件存储路径
     pure_path = PurePath(getcwd())  # 完整纯路径
     file_reader = read_csv(filename, chunksize=chunksize)
+    last_file_num = 0  # 记录最后一个文件的文件编号
     for i, chunk in enumerate(file_reader, start=1):
         print(i, ' : ', len(chunk))
         chunk.to_csv(prefix + str(i) + '.csv', index=False)
+        last_file_num = i
     chdir(pure_path.parent)
+    return last_file_num
 
 
 def get_user_info(dft_name):
@@ -81,45 +80,57 @@ def get_user_info(dft_name):
     for href in tqdm(dft.loc[:, 'space_url'].tolist(), desc=desc):
         res_text = scrape_space(href, headers)
         user_info = parse_space_info(res_text)
-        save_user_data(user_info, 'user_info.csv', mode='a+')
+        # 插入不同的数据文件, 免得数据混淆
+        save_user_data(user_info, desc + '_info.csv', mode='a+')
     remove(dft_name)
     print(f'{dft_name}采集完成, 已经移除文件{dft_name}')
 
 
-def clean_user_info(filename, filepath):
+def clean_user_info(file_list, filepath, filename, columns):
     chdir(filepath)
-    # dft = read_csv(filename, encoding='utf-8-sig', encoding_errors=None)
-    # dft['date'] = strftime('%Y-%m-%d', localtime(time()))
-    # filename = filename.replace('csv', 'xlsx')
-    # dft.to_excel(filename)
-    # print(dft.head())
-    pass
+    dft = []
+    for each_file in file_list:
+        data = read_csv(each_file, encoding='utf-8', header=None)
+        dft.append(data)
+        remove(each_file)
+    dft = concat(dft, ignore_index=True, axis=0).drop_duplicates().dropna()
+    dft.columns = columns
+    dft['date'] = strftime('%Y-%m-%d', localtime(time()))
+    dft.to_excel(filename, index=False)
+    print('采集总样本量:', len(dft))
+
+
+def craw_user_info(file_path, file_name):
+
+    # 优先检查 -- 最终输出文件是否存在 + 切换路径到数据文件夹
+    check_file(file_name, filepath=file_path, remove_file=True)
+
+    # 切割大文件, 可以根据 chunksize选择切割大小
+    last_num = split_file('space_urls_active.csv', chunksize=2000, filepath=file_path, prefix='url_')
+    # 生成文件读取列表
+    file_name_list = ['url_' + str(i) + '.csv' for i in arange(1, last_num + 1)]
+    # 开启进程池, 采集数据 --  get_user_info(dft_name)
+    with Pool(processes=10) as pool:
+        pool.map(get_user_info, file_name_list)
+        pool.close()
+        pool.join()
+
+    # 最终文件合并 + 数据清洗
+    col_names = [
+        'uid', 'user_name', 'user_lv', 'province', 'active_value', 'post_num', 'replies',
+        'friends', 'total_sign', 'continue_sign', 'month_sign', 'last_sign', 'agg_score',
+        'last_score', 'sign_lv', 'medal_num'
+    ]
+    file_lists = ['url_' + str(i) + '_info.csv' for i in arange(1, last_num + 1)]
+    clean_user_info(file_lists, file_path, file_name, col_names)
 
 
 if __name__ == '__main__':
-    # # 切割大文件, 可以根据 chunksize选择切割大小
-    # split_file('space_urls_active.csv', chunksize=4000, filepath='./data', prefix='url_')
+    f_path, f_name = './data', 'user_info.xlsx'
+    craw_user_info(f_path, f_name)
 
-    file_name = 'user_info.csv'
-    file_path = './data'
-    # # 优先检查 -- 最终输出文件是否存在
-    # check_file(file_name, filepath=file_path, remove_file=True)
-    #
-    # # 创建文件, 写入表头
-    # col_names = [
-    #     'uid', 'user_name', 'user_lv', 'province', 'active_value', 'post_num', 'replies',
-    #     'friends', 'total_sign', 'continue_sign', 'month_sign', 'last_sign', 'agg_score',
-    #     'last_score', 'sign_lv', 'medal_num'
-    # ]
-    # creat_file(file_name, file_path, col_names)
-    #
-    # # 生成文件读取列表
-    # file_name_list = ['url_' + str(i) + '.csv' for i in arange(1, 12+1)]
-    #
-    # # 开启进程池, 采集数据 --  get_user_info(dft_name)
-    # with Pool(processes=8) as pool:
-    #     pool.map(get_user_info, file_name_list)
-    #     pool.close()
-    #     pool.join()
 
-    clean_user_info(file_name, file_path)
+
+
+
+
