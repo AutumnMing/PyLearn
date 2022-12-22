@@ -94,22 +94,28 @@ def parse_space_info(text):
     replies = selector.xpath('//tbody/tr[6]/td/text()').get()  # 回帖数
     active_value = selector.xpath('//tbody/tr[7]/td/text()').get()  # 活跃值
     medal_list = selector.xpath('//tbody/tr[5]/td/ul/li/p/text()').getall()  # 勋章名称列表
-    return [{
+    return {
         'uid': uid, 'user_name': user_name, 'user_lv': user_lv, 'province': province,
         'active_value': active_value, 'post_num': post_num, 'replies': replies, 'friends': friends,
         'total_sign': total_sign, 'continue_sign': continue_sign, 'month_sign': month_sign,
         'last_sign': last_sign, 'agg_score': agg_score, 'last_score': last_score,
         'sign_lv': sign_lv, 'medal_num': len(medal_list)
-    }]
+    }
+
+
+def parse_space_info1(text):
+    dict_data = parse_space_info(text)
+    print(dict_data)
+    return [dict_data]
 
 
 # 功能整合 -- 获取用户详细信息 -- 单次获取 --
 def get_user_info(space_url, headers):
     text = scrape_space(space_url, headers=headers)
-    data = parse_space_info(text)
+    data = parse_space_info1(text)
+    # 添加写入数据方法 -- 不太建议采用此方法
     dft = DataFrame(data)
     dft['dt'] = strftime('%Y-%m-%d', localtime(time()))
-    print(data)
     return dft
 
 

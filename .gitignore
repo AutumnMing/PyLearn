@@ -6,3 +6,9 @@
 .idea/misc.xml
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/csv-editor.xml
+.idea/other.xml
+craw_data/hihonor/__pycache__/clean_data.cpython-310.pyc
+craw_data/hihonor/__pycache__/pc_honor.cpython-310.pyc
+craw_data/hihonor/data/space_urls.csv
+craw_data/hihonor/data/space_urls_sleep.csv
