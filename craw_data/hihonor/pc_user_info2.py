@@ -15,7 +15,6 @@ def save_user_data(user_data: dict, filename: str, mode: str):
     with open(filename, mode, newline='', encoding='utf-8') as f:
         w = DictWriter(f, fieldnames=list(user_data))
         w.writerow(user_data)
-        # print(user_data)
 
 
 def creat_file(filename, filepath, columns):
