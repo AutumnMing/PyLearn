@@ -99,7 +99,7 @@ def clean_user_info(file_list, filepath, filename, columns):
     print('采集总样本量:', len(dft))
 
 
-def craw_user_info(file_path, file_name):
+def craw_user_info(file_path, file_name, process=4):
 
     # 优先检查 -- 最终输出文件是否存在 + 切换路径到数据文件夹
     check_file(file_name, filepath=file_path, remove_file=True)
@@ -109,7 +109,7 @@ def craw_user_info(file_path, file_name):
     # 生成文件读取列表
     file_name_list = ['url_' + str(i) + '.csv' for i in arange(1, last_num + 1)]
     # 开启进程池, 采集数据 --  get_user_info(dft_name)
-    with Pool(processes=10) as pool:
+    with Pool(processes=process) as pool:
         pool.map(get_user_info, file_name_list)
         pool.close()
         pool.join()
@@ -126,7 +126,7 @@ def craw_user_info(file_path, file_name):
 
 if __name__ == '__main__':
     f_path, f_name = './data', 'user_info.xlsx'
-    craw_user_info(f_path, f_name)
+    craw_user_info(f_path, f_name, process=6)
 
 
 
