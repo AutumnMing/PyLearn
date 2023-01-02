@@ -8,7 +8,7 @@
 # browser.close()
 
 # 判断列表为空
-a = [] # 空列表为false
+a = []  # 空列表为false
 # print(len(a))
 # print(a is None)
 if not a:
