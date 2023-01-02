@@ -5,7 +5,7 @@ from selenium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-from pandas import DataFrame,concat
+from pandas import DataFrame, concat
 
 browser = webdriver.Edge()
 browser.get('http://xzqh.mca.gov.cn/map')
