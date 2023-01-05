@@ -15,3 +15,4 @@ craw_data/hihonor/__pycache__/pc_user_info.cpython-310.pyc
 craw_data/hihonor/__pycache__/space_urls_active.csv
 *.csv
 craw_data/hihonor/data/user_info.xlsx
+*.xlsx
